@@ -4,8 +4,18 @@ from matrix import *
 
 screen = new_screen()
 color = [ 0, 255, 0 ]
-matrix = new_matrix()
 
+#wack = new_matrix()
+#matrix = new_matrix(4, 10)
+#
+#matrix_mult(wack, matrix)
 
-draw_lines( matrix, screen, color )
-display(screen)
+m = [
+        [0, 250, 500],
+        [0, 500, 000],
+        [0, 0, 0],
+        [1, 1, 1],
+    ]
+
+draw_lines( m, screen, color )
+#display(screen)

@@ -13,6 +13,7 @@ import math
 #print the matrix such that it looks like
 #the template in the top comment
 def print_matrix( matrix ):
+    print( str(len(matrix)) + ' by ' + str(len(matrix[0])) + ' matrix' )
     for i in range(0, len(matrix)):
         print ' '.join(str(x) for x in matrix[i])
 
@@ -30,25 +31,30 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 #return void
+# m2 is 4xn
 def matrix_mult( m1, m2 ):
-    pass
+    n = len( m2[0] )
+    m = new_matrix(4, n)
+    print_matrix(m)
+
+
 
 
 
 
 def new_matrix(rows = 4, cols = 4):
     m = []
-    for c in range( cols ):
+    for r in range( rows ):
         m.append( [] )
-        for r in range( rows ):
-            m[c].append( 0 )
-    #return m
+        for c in range( cols ):
+            m[r].append( 0 )
+    return m
 
-m = [   
+m = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9],
     ]
 
-#ident( m )
-print_matrix( ident(m) )
+#ident(m)
+#print_matrix( m )
