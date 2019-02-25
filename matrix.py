@@ -33,12 +33,16 @@ def ident( matrix ):
 #return void
 # m2 is 4xn
 def matrix_mult( m1, m2 ):
-    n = len( m2[0] )
-    m = new_matrix(4, n)
-    print_matrix(m)
+    product = new_matrix(4, len(m2[0]))
 
+    for m1_row in range(len(m1)):
+        for m2_col in range(len(m2[0])):
+            for m2_row in range(len(m2)):
+                #print(m1[m1_row][m2_row])
+                #print(m2[m2_row][m2_col])
+                product[m1_row][m2_col] += m1[m1_row][m2_row] * m2[m2_row][m2_col]
 
-
+    return product
 
 
 
@@ -50,11 +54,28 @@ def new_matrix(rows = 4, cols = 4):
             m[r].append( 0 )
     return m
 
-m = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
+A = [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 16],
     ]
 
-#ident(m)
-#print_matrix( m )
+B = [
+        [11, 12, 13, 14],
+        [15, 16, 17, 18],
+        [19, 20, 21, 22],
+        [23, 24, 25, 26],
+    ]
+
+#print_matrix(A)
+#print_matrix(B)
+#matrix_mult(A, B)
+#print_matrix(A)
+#print_matrix(B)
+#matrix_mult(B, A)
+#print_matrix(A)
+#print_matrix(B)
+#ident(A)
+#print_matrix(A)
+#matrix_mult(A, B)
