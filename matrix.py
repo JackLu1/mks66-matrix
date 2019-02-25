@@ -10,6 +10,7 @@ z0  z1  ... zn
 import math
 
 
+
 #print the matrix such that it looks like
 #the template in the top comment
 def print_matrix( matrix ):
